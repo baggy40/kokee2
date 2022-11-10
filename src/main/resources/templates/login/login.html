@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../assets/libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+    *{padding: 0; margin:0;}
+
+    html, body{ height:100%; background: #fff; }
+
+    .container{width:500px; margin-top:200px;}
+    #inputBox{margin-top:15px;}
+    .card{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .input-form-box{margin-bottom:30px;}
+    .input-form-box input{margin-top:10px;}
+    .button-login-box{margin-top:50px;}
+
+</style>
+<body class="text-center">
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <div id="loginBox">
+                <div id="loginBoxTitle">관리자 로그인</div>
+                <div id="inputBox">
+                    <div class="input-form-box">
+                        <span>아이디</span>
+                        <input type="text" name="uid" class="form-control">
+                    </div>
+                    <div class="input-form-box">
+                        <span>비밀번호</span>
+                        <input type="password" name="pwd" class="form-control">
+                    </div>
+                    <div class="button-login-box">
+                        <button type="button" class="btn btn-primary btn-xs" style="width:100%">로그인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

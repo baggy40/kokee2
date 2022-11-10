@@ -51,11 +51,7 @@ public class CommerceController {
     public String iconsimplelineicon(){
         return "html/icon-simple-lineicon";
     }
-    @GetMapping(value = "/index")
-    public String index(){
 
-        return "html/index";
-    }
     @GetMapping(value = "/table-basic")
     public String tablebasic(){
         return "html/table-basic";

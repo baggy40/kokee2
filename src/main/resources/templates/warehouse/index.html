@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en">
+<html dir="ltr" lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8">
@@ -32,6 +32,11 @@
         font-size: 15px;
         margin-left: 35px;}
     .logo-text span{width:50px; color:#000; font-weight:bold;}
+
+    .ct-chart-bar{
+        padding-left: 10px;
+        padding-top: 20px;
+    }
 </style>
 
 <body>
@@ -281,7 +286,7 @@
                     <ul id="sidebarnav">
                         <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="/index"
                                                      aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
-                                class="hide-menu">Dashboard</span></a></li>
+                                class="hide-menu">창고 재고 현황</span></a></li>
                         <li class="list-divider"></li>
                         <li class="list-divider"></li>
                         <li class="nav-small-cap"><span class="hide-menu">Components</span></li>
@@ -623,9 +628,79 @@
                     </div>
                     <div class="col-lg-4 col-md-12">
                         <div class="card">
-                            <div class="card-body">
+                            <div class="card-body card-svg">
                                 <h4 class="card-title">Net Income</h4>
-                                <div class="net-income mt-4 position-relative" style="height:294px;"></div>
+<!--                                 <div class="net-income mt-4 position-relative" style="height:294px;"></div>-->
+
+                                <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-bar mt-4 position-relative" style="width: 100%; height: 294px">
+                                    <g class="ct-grids">
+                                        <line y1="259" y2="259" x1="40" x2="420" class="ct-grid ct-vertical"></line>
+                                        <line y1="228.5" y2="228.5" x1="40" x2="420" class="ct-grid ct-vertical"></line>
+                                        <line y1="198" y2="198" x1="40" x2="420" class="ct-grid ct-vertical"></line>
+                                        <line y1="167.5" y2="167.5" x1="40" x2="420" class="ct-grid ct-vertical"></line>
+                                        <line y1="137" y2="137" x1="40" x2="420" class="ct-grid ct-vertical"></line>
+                                        <line y1="106.5" y2="106.5" x1="40" x2="420" class="ct-grid ct-vertical"></line>
+                                        <line y1="76" y2="76" x1="40" x2="420" class="ct-grid ct-vertical"></line>
+                                        <line y1="45.5" y2="45.5" x1="40" x2="420" class="ct-grid ct-vertical"></line>
+                                        <line y1="15" y2="15" x1="40" x2="420" class="ct-grid ct-vertical"></line>
+                                    </g>
+                                    <g>
+                                        <g class="ct-series ct-series-a">
+                                            <line x1="75" x2="75" y1="259" th:attr="y2=${test1}" class="ct-bar" ct:value="5"></line>
+                                            <line x1="135" x2="135" y1="259" y2="161.4" class="ct-bar" ct:value="4"></line>
+                                            <line x1="195" x2="195" y1="259" y2="185.8" class="ct-bar" ct:value="3"></line>
+                                            <line x1="255" x2="255" y1="259" y2="88.19999999999999" class="ct-bar" ct:value="7"></line>
+                                            <line x1="318" x2="318" y1="259" y2="137" class="ct-bar" ct:value="5"></line>
+                                            <line x1="375" x2="375" y1="259" y2="15" class="ct-bar" ct:value="10"></line>
+                                        </g>
+                                    </g>
+                                    <g class="ct-labels">
+                                        <foreignObject style="overflow: visible;" x="50" y="264" width="50.666666666666664" height="20">
+                                            <span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 51px; height: 20px;">Jan</span>
+                                        </foreignObject>
+                                        <foreignObject style="overflow: visible;" x="110" y="264" width="50.666666666666664" height="20">
+                                            <span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 51px; height: 20px;">Feb</span>
+                                        </foreignObject>
+                                        <foreignObject style="overflow: visible;" x="170" y="264" width="50.66666666666667" height="20">
+                                            <span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 51px; height: 20px;">Mar</span>
+                                        </foreignObject>
+                                        <foreignObject style="overflow: visible;" x="230" y="264" width="50.66666666666666" height="20">
+                                            <span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 51px; height: 20px;">Apr</span>
+                                        </foreignObject>
+                                        <foreignObject style="overflow: visible;" x="290" y="264" width="50.66666666666666" height="20">
+                                            <span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 51px; height: 20px;">May</span>
+                                        </foreignObject><foreignObject style="overflow: visible;" x="350" y="264" width="50.666666666666686" height="20">
+                                        <span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 51px; height: 20px;">Jun</span>
+                                    </foreignObject>
+                                        <foreignObject style="overflow: visible;" y="228.5" x="0" height="30.5" width="30">
+                                            <span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 31px; width: 30px;">0</span>
+                                        </foreignObject>
+                                        <foreignObject style="overflow: visible;" y="198" x="0" height="30.5" width="30">
+                                            <span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 31px; width: 30px;">1.25</span>
+                                        </foreignObject>
+                                        <foreignObject style="overflow: visible;" y="167.5" x="0" height="30.5" width="30">
+                                            <span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 31px; width: 30px;">2.5</span>
+                                        </foreignObject>
+                                        <foreignObject style="overflow: visible;" y="137" x="0" height="30.5" width="30">
+                                            <span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 31px; width: 30px;">3.75</span>
+                                        </foreignObject>
+                                        <foreignObject style="overflow: visible;" y="106.5" x="0" height="30.5" width="30">
+                                            <span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 31px; width: 30px;">5</span>
+                                        </foreignObject>
+                                        <foreignObject style="overflow: visible;" y="76" x="0" height="30.5" width="30">
+                                            <span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 31px; width: 30px;">6.25</span>
+                                        </foreignObject><foreignObject style="overflow: visible;" y="45.5" x="0" height="30.5" width="30">
+                                        <span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 31px; width: 30px;">7.5</span>
+                                    </foreignObject>
+                                        <foreignObject style="overflow: visible;" y="15" x="0" height="30.5" width="30">
+                                            <span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 31px; width: 30px;">8.75</span>
+                                        </foreignObject>
+                                        <foreignObject style="overflow: visible;" y="-15" x="0" height="30" width="30">
+                                            <span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 30px; width: 30px;">10</span>
+                                        </foreignObject>
+                                    </g>
+                                </svg>
+
                                 <ul class="list-inline text-center mt-5 mb-2">
                                     <li class="list-inline-item text-muted font-italic">Sales for this month</li>
                                 </ul>
@@ -799,7 +874,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex align-items-center mb-4">
-                                    <h4 class="card-title">지점별 정보 주문 Status</h4>
+                                    <h4 class="card-title">재고 내역</h4>
                                     <div class="ml-auto">
                                         <div class="dropdown sub-dropdown">
                                             <button class="btn btn-link text-muted dropdown-toggle" type="button"
@@ -819,155 +894,41 @@
                                     <table class="table no-wrap v-middle mb-0">
                                         <thead>
                                             <tr class="border-0">
-                                                <th class="border-0 font-14 font-weight-medium text-muted">Team Lead
+                                                <th class="font-14 font-weight-medium text-muted">NO</th>
+                                                <th class="font-14 font-weight-medium text-muted">창고명</th>
+                                                <th class="font-14 font-weight-medium text-muted px-2">주문상품
                                                 </th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted px-2">Project
+                                                <th class="font-14 font-weight-medium text-muted">구분</th>
+                                                <th class="font-14 font-weight-medium text-muted">
+                                                    입고
                                                 </th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted">Team</th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted text-center">
-                                                    Status
+                                                <th class="font-14 font-weight-medium text-muted">
+                                                    출고
                                                 </th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted text-center">
-                                                    Weeks
-                                                </th>
-                                                <th class="border-0 font-14 font-weight-medium text-muted">Budget</th>
+                                                <th class="font-14 font-weight-medium text-muted">재고</th>
+                                                <th class="font-14 font-weight-medium text-muted">날짜</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td class="border-top-0 px-2 py-4">
+                                            <tr th:each="wareEntity : ${wareEntity}">
+                                                <td>
                                                     <div class="d-flex no-block align-items-center">
                                                         <div class="mr-3"><img
                                                                 src="../assets/images/users/widget-table-pic1.jpg"
                                                                 alt="user" class="rounded-circle" width="45"
                                                                 height="45" /></div>
                                                         <div class="">
-                                                            <h5 class="text-dark mb-0 font-16 font-weight-medium">Hanna
-                                                                Gover</h5>
-                                                            <span class="text-muted font-14">hgover@gmail.com</span>
+                                                            <h5 class="text-dark mb-0 font-16 font-weight-medium" th:text="${wareEntity.id}"></h5>
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td class="border-top-0 text-muted px-2 py-4 font-14">Elite Admin</td>
-                                                <td class="border-top-0 px-2 py-4">
-                                                    <div class="popover-icon">
-                                                        <a class="btn btn-primary rounded-circle btn-circle font-12"
-                                                            href="javascript:void(0)">DS</a>
-                                                        <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item"
-                                                            href="javascript:void(0)">SS</a>
-                                                        <a class="btn btn-cyan rounded-circle btn-circle font-12 popover-item"
-                                                            href="javascript:void(0)">RP</a>
-                                                        <a class="btn btn-success text-white rounded-circle btn-circle font-20"
-                                                            href="javascript:void(0)">+</a>
-                                                    </div>
-                                                </td>
-                                                <td class="border-top-0 text-center px-2 py-4"><i
-                                                        class="fa fa-circle text-primary font-12" data-toggle="tooltip"
-                                                        data-placement="top" title="In Testing"></i></td>
-                                                <td
-                                                    class="border-top-0 text-center font-weight-medium text-muted px-2 py-4">
-                                                    35
-                                                </td>
-                                                <td class="font-weight-medium text-dark border-top-0 px-2 py-4">$96K
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="px-2 py-4">
-                                                    <div class="d-flex no-block align-items-center">
-                                                        <div class="mr-3"><img
-                                                                src="../assets/images/users/widget-table-pic2.jpg"
-                                                                alt="user" class="rounded-circle" width="45"
-                                                                height="45" /></div>
-                                                        <div class="">
-                                                            <h5 class="text-dark mb-0 font-16 font-weight-medium">Daniel
-                                                                Kristeen
-                                                            </h5>
-                                                            <span class="text-muted font-14">Kristeen@gmail.com</span>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td class="text-muted px-2 py-4 font-14">Real Homes WP Theme</td>
-                                                <td class="px-2 py-4">
-                                                    <div class="popover-icon">
-                                                        <a class="btn btn-primary rounded-circle btn-circle font-12"
-                                                            href="javascript:void(0)">DS</a>
-                                                        <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item"
-                                                            href="javascript:void(0)">SS</a>
-                                                        <a class="btn btn-success text-white rounded-circle btn-circle font-20"
-                                                            href="javascript:void(0)">+</a>
-                                                    </div>
-                                                </td>
-                                                <td class="text-center px-2 py-4"><i
-                                                        class="fa fa-circle text-success font-12" data-toggle="tooltip"
-                                                        data-placement="top" title="Done"></i>
-                                                </td>
-                                                <td class="text-center text-muted font-weight-medium px-2 py-4">32</td>
-                                                <td class="font-weight-medium text-dark px-2 py-4">$85K</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="px-2 py-4">
-                                                    <div class="d-flex no-block align-items-center">
-                                                        <div class="mr-3"><img
-                                                                src="../assets/images/users/widget-table-pic3.jpg"
-                                                                alt="user" class="rounded-circle" width="45"
-                                                                height="45" /></div>
-                                                        <div class="">
-                                                            <h5 class="text-dark mb-0 font-16 font-weight-medium">Julian
-                                                                Josephs
-                                                            </h5>
-                                                            <span class="text-muted font-14">Josephs@gmail.com</span>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td class="text-muted px-2 py-4 font-14">MedicalPro WP Theme</td>
-                                                <td class="px-2 py-4">
-                                                    <div class="popover-icon">
-                                                        <a class="btn btn-primary rounded-circle btn-circle font-12"
-                                                            href="javascript:void(0)">DS</a>
-                                                        <a class="btn btn-danger rounded-circle btn-circle font-12 popover-item"
-                                                            href="javascript:void(0)">SS</a>
-                                                        <a class="btn btn-cyan rounded-circle btn-circle font-12 popover-item"
-                                                            href="javascript:void(0)">RP</a>
-                                                        <a class="btn btn-success text-white rounded-circle btn-circle font-20"
-                                                            href="javascript:void(0)">+</a>
-                                                    </div>
-                                                </td>
-                                                <td class="text-center px-2 py-4"><i
-                                                        class="fa fa-circle text-primary font-12" data-toggle="tooltip"
-                                                        data-placement="top" title="Done"></i>
-                                                </td>
-                                                <td class="text-center text-muted font-weight-medium px-2 py-4">29</td>
-                                                <td class="font-weight-medium text-dark px-2 py-4">$81K</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="px-2 py-4">
-                                                    <div class="d-flex no-block align-items-center">
-                                                        <div class="mr-3"><img
-                                                                src="../assets/images/users/widget-table-pic4.jpg"
-                                                                alt="user" class="rounded-circle" width="45"
-                                                                height="45" /></div>
-                                                        <div class="">
-                                                            <h5 class="text-dark mb-0 font-16 font-weight-medium">Jan
-                                                                Petrovic
-                                                            </h5>
-                                                            <span class="text-muted font-14">hgover@gmail.com</span>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td class="text-muted px-2 py-4 font-14">Hosting Press HTML</td>
-                                                <td class="px-2 py-4">
-                                                    <div class="popover-icon">
-                                                        <a class="btn btn-primary rounded-circle btn-circle font-12"
-                                                            href="javascript:void(0)">DS</a>
-                                                        <a class="btn btn-success text-white font-20 rounded-circle btn-circle"
-                                                            href="javascript:void(0)">+</a>
-                                                    </div>
-                                                </td>
-                                                <td class="text-center px-2 py-4"><i
-                                                        class="fa fa-circle text-danger font-12" data-toggle="tooltip"
-                                                        data-placement="top" title="In Progress"></i></td>
-                                                <td class="text-center text-muted font-weight-medium px-2 py-4">23</td>
-                                                <td class="font-weight-medium text-dark px-2 py-4">$80K</td>
+                                                <td class="text-muted px-2 py-4 font-14" th:text="${wareEntity.warehouseEntity.warehouse_name}"></td>
+                                                <td class="text-muted px-2 py-4 font-14" th:text="${wareEntity.itemEntity.product_name}"></td>
+                                                <td class="text-muted px-2 py-4" th:text="${wareEntity.gubun}"></td>
+                                                <td class="text-muted px-2 py-4" th:text="${wareEntity.receiving}"></td>
+                                                <td class="text-muted px-2 py-4" th:text="${wareEntity.forwarding}"></td>
+                                                <td class="text-muted px-2 py-4" th:text="${wareEntity.stock}"></td>
+                                                <td class="font-weight-medium text-dark px-2 py-4" th:text="${wareEntity.createDate}"></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -1024,6 +985,25 @@
     <script src="../assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="../assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
     <script src="../dist/js/pages/dashboards/dashboard1.min.js"></script>
+
+    <script  th:inline="javascript">
+    /*<![CDATA[*/
+       console.log([[${wareEntity}]]);
+	/*]]>*/
+
+	let data = [
+	    {month:"Jan", target:94, result:92},
+	    {month:"fed", target:80, result:60},
+	    {month:"Mar", target:94, result:32},
+	    {month:"Apr", target:35, result:24},
+	    {month:"May", target:94, result:50}
+	]
+
+<!--	 $(function(){-->
+<!--        var dan = 2-->
+<!--        ex_charts(dan);-->
+<!--        });-->
+</script>
 </body>
 
 </html>

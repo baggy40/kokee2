@@ -20,6 +20,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.PersistenceContext;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
@@ -79,6 +81,14 @@ public class WarehouseTest {
                 .orElseThrow(EntityNotFoundException::new);
         assertEquals(saved.getId(), itemEntity.getId());
     }
+    @Test
+    @DisplayName("전체 조회")
+    public void findAllTest(){
+        List<WarehouseStockEntity> findAll = warehouseStockRepository.findAll();
+        for(WarehouseStockEntity exs : findAll){
+            System.out.println(exs.toString());
 
+        }
+    }
 
 }

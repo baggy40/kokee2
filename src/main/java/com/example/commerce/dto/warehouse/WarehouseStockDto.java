@@ -11,6 +11,8 @@ public class WarehouseStockDto {
     private Integer receiving; //입고
     private Integer forwarding; //출고
     private Integer stock; //재고
+    private Integer item_id;
+    private Integer warehouse_id;
 
     //날짜는 Entity에서 now로 만든다
 }

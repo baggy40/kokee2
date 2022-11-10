@@ -6080,7 +6080,7 @@ button.bg-purple:focus {
 
 .pr-2,
 .px-2 {
-  padding-right: 0.5rem !important; }
+  padding-right: 1rem !important; }
 
 .pb-2,
 .py-2 {
@@ -6088,7 +6088,7 @@ button.bg-purple:focus {
 
 .pl-2,
 .px-2 {
-  padding-left: 0.5rem !important; }
+  padding-left: 1rem !important; }
 
 .p-3 {
   padding: 1rem !important; }

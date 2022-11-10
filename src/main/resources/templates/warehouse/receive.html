@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="_csrf" th:content="${_csrf.token}"/>
+    <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+    <title>Title</title>
+</head>
+<style>
+    *{margin:0; padding:0; list-style:none;}
+    body{width:100%;}
+
+    .table_box{
+        width:1000px; height:500px;
+        position:fixed; top:50%; left:50%; transform:translate(-50%,-50%);
+    }
+    .table_radio{width:100%; height:50px; border:1px solid #ccc; font-size:14px;}
+    .table_side{float:left; height:100%; width:20%;  background: linear-gradient(0deg, #eee, #ccc);
+    line-height:50px; text-align:center; color:#555; font-size:14px;}
+    .table_select{width:80%; height:50px; float:left; line-height:50px;}
+    .table_select input{margin-left:25px;}
+    .table_select label{margin-left:10px;}
+
+    .table_02{width:100%; height:50px; line-height:50px; font-size:14px; border:1px solid #ccc; }
+    .coff1{float:left; width:26%;  border-right: 1px solid #ddd;}
+    .table_left{float:left; margin-left:10px;}
+    .coffee{float:left; margin-top:16px; margin-left:5px;}
+    .coff_quan{float:left; margin-top:16px; margin-left:5px;}
+
+    .coff2{float:left; width:26%; border-right: 1px solid #ddd;}
+    .latte{float:left; margin-top:16px; margin-left:5px;}
+    .latte_quan{float:left; margin-top:16px; margin-left:5px;}
+
+    .coff3{float:left; width:26%;}
+    .bubble{float:left;margin-top:16px; margin-left:5px;}
+    .bubble_quan{float:left;margin-top:16px; margin-left:5px;}
+
+    .table_03{width:100%; height:50px; line-height:50px; font-size:14px; border:1px solid #ccc; }
+    .coff4{float:left; width:26%;  border-right: 1px solid #ddd;}
+    .smooth{float:left; margin-top:16px; margin-left:5px;}
+    .smooth_quan{float:left; margin-top:16px; margin-left:5px;}
+
+    .coff5{float:left; width:26%; border-right: 1px solid #ddd;}
+    .whipping{float:left; margin-top:16px; margin-left:5px;}
+    .whipping_quan{float:left; margin-top:16px; margin-left:5px;}
+
+    .coff6{float:left; width:26%;}
+    .syrup{float:left;margin-top:16px; margin-left:5px;}
+    .syrup_quan{float:left;margin-top:16px; margin-left:5px;}
+
+    #searchBtn{width:100px; background: linear-gradient(0deg, #eee, #ccc); margin-top:10px;
+        border: none;
+        height: 25px;
+        color: #555;
+        font-size: 12px;}
+
+
+</style>
+<body>
+
+    <div class="table_box">
+        <div class="table_radio">
+            <div class="table_side">정렬방식</div>
+            <div class="table_select">
+                <input type="radio" id="select" name="shop" value="2"><label for="select">뉴욕창고</label>
+                <input type="radio" id="select2" name="shop" value="8"><label for="select2">워싱턴창고</label>
+                <input type="radio" id="select3" name="shop" value="6"><label for="select3">애리조나창고</label>
+                <input type="radio" id="select4" name="shop" value="10"><label for="select4">텍사스창고</label>
+                <input type="radio" id="select5" name="shop" value="12"><label for="select5">LA창고</label>
+            </div>
+        </div>
+
+        <div class="table_02">
+            <div class="table_side">정렬방식</div>
+            <div class="coff1">
+                <div class="table_left">커피주문</div>
+                <select id="coffee" name="coffee" class="coffee">
+                    <option value="" selected="selected">Coffee</option>
+                    <option value="arabica_2">아라비카</option>
+                    <option value="robusta_3">로부스타</option>
+                    <option value="colombia_4">콜롬비아</option>
+                    <option value="prote_5" >포르테에스프레소</option>
+                    <option value="prote_gold_6" >포르테골드</option>
+                    <option value="guate_7" >과테말라</option>
+                    <option value="papua_8" >파푸아뉴기니아</option>
+                    <option value="florence_9" >플로렌스</option>
+                </select>
+                <select id="coff_quan" name="coff_quan" class="coff_quan">
+                    <option value="0" selected="selected">0</option>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="40" >40</option>
+                    <option value="50" >50</option>
+                    <option value="60" >60</option>
+                    <option value="70" >70</option>
+                    <option value="80" >80</option>
+                    <option value="90" >90</option>
+                    <option value="100" >100</option>
+                </select>
+            </div>
+            <div class="coff2">
+                <div class="table_left">라떼주문</div>
+                <select id="latte" name="latte" class="latte">
+                    <option value="" selected="selected">Latte</option>
+                    <option value="milk_latte_10">밀크티라떼</option>
+                    <option value="green_latte_11">녹차라떼</option>
+                    <option value="blue_mix_12" >블루베리믹스</option>
+                    <option value="black_latte_13" >블랙반라떼</option>
+                    <option value="pumpkin_14" >호박페이스트</option>
+                    <option value="hong_latte_15" >홍차라떼</option>
+                </select>
+                <select id="latte_quan" name="latte_quan" class="latte_quan">
+                    <option value="0" selected="selected">0</option>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="40" >40</option>
+                    <option value="50" >50</option>
+                    <option value="60" >60</option>
+                    <option value="70" >70</option>
+                    <option value="80" >80</option>
+                    <option value="90" >90</option>
+                    <option value="100" >100</option>
+                </select>
+            </div>
+
+            <div class="coff3">
+                <div class="table_left">버블티재료</div>
+                <select id="bubble" name="bubble" class="bubble">
+                    <option value="" selected="selected">BubbleTea</option>
+                    <option value="black_sugar_16">흑당베이스</option>
+                    <option value="taoka_17">블랙타오카</option>
+                    <option value="black_pearl_18" >즉석블랙펄</option>
+                    <option value="sugar_syrup_19" >흑당시럽</option>
+                    <option value="mango_p_20" >망고파우더</option>
+                    <option value="taro_bubble_21" >타로버블티</option>
+                    <option value="coconut_bubble_22" >코코넛버블티</option>
+                    <option value="melon_bubble_23" >멜론버블티</option>
+                    <option value="milk_tea_24" >밀크티베이스</option>
+                    <option value="premium_choco_25" >프리미엄초콜릿</option>
+                </select>
+                <select id="bubble_quan" name="bubble_quan" class="bubble_quan">
+                    <option value="0" selected="selected">0</option>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="40" >40</option>
+                    <option value="50" >50</option>
+                    <option value="60" >60</option>
+                    <option value="70" >70</option>
+                    <option value="80" >80</option>
+                    <option value="90" >90</option>
+                    <option value="100" >100</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="table_03">
+            <div class="table_side">정렬방식</div>
+            <div class="coff4">
+                <div class="table_left">스무디액</div>
+                <select id="smooth" name="smooth" class="smooth">
+                    <option value="" selected="selected">Smoothie</option>
+                    <option value="green_grape_26">청포도베이스</option>
+                    <option value="mango_base_27">망고베이스</option>
+                    <option value="strawberry_28">딸기베이스</option>
+                    <option value="blueberry_29">블루베리베이스</option>
+                    <option value="tur_orange_base_30" >터너베이스오렌지</option>
+                    <option value="tur_grape_31" >터너베이스자몽</option>
+                    <option value="tur_peach_32" >터너베이스복숭아</option>
+                </select>
+                <select id="smooth_quan" name="smooth_quan" class="smooth_quan">
+                    <option value="0" selected="selected">0</option>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="40" >40</option>
+                    <option value="50" >50</option>
+                    <option value="60" >60</option>
+                    <option value="70" >70</option>
+                    <option value="80" >80</option>
+                    <option value="90" >90</option>
+                    <option value="100" >100</option>
+                </select>
+            </div>
+            <div class="coff5">
+                <div class="table_left">휴핑/우유</div>
+                <select id="whipping" name="whipping" class="whipping">
+                    <option value="" selected="selected">Whipping</option>
+                    <option value="whipping_33">휘핑크림</option>
+                    <option value="nitro_34">질소가스</option>
+                    <option value="soda_35" >소다&탄산</option>
+                    <option value="whi_spray_36" >휘핑스프레이</option>
+                    <option value="lamis_37" >라미스휘핑</option>
+                    <option value="soda_siphon_38" >소다사이폰</option>
+                </select>
+                <select id="whipping_quan" name="whipping_quan" class="whipping_quan">
+                    <option value="0" selected="selected">0</option>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="40" >40</option>
+                    <option value="50" >50</option>
+                    <option value="60" >60</option>
+                    <option value="70" >70</option>
+                    <option value="80" >80</option>
+                    <option value="90" >90</option>
+                    <option value="100" >100</option>
+                </select>
+            </div>
+
+            <div class="coff6">
+                <div class="table_left">슈가시럽</div>
+                <select id="syrup" name="syrup" class="syrup">
+                    <option value="" selected="selected">SugarSyrup</option>
+                    <option value="syrup_39">카페시럽</option>
+                    <option value="rich_sugar_40">리치스슈가시럽</option>
+                    <option value="q1_mini_41" >큐원미니바</option>
+                    <option value="perl_sugar_42" >펄슈가</option>
+                    <option value="brown_sugar_43" >갈색설탕</option>
+                    <option value="white_44" >하얀설탕</option>
+                    <option value="sticky_45" >스틱설탕</option>
+                </select>
+                <select id="syrup_quan" name="syrup_quan" class="syrup_quan">
+                    <option value="0" selected="selected">0</option>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="40" >40</option>
+                    <option value="50" >50</option>
+                    <option value="60" >60</option>
+                    <option value="70" >70</option>
+                    <option value="80" >80</option>
+                    <option value="90" >90</option>
+                    <option value="100" >100</option>
+                </select>
+            </div>
+        </div>
+        <button id="searchBtn">검색</button>
+    </div>
+
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script>
+    //여러개 한 번에 주문싱에는?
+        $(document).ready(function(){
+            var warehouseStockDto = {}
+            var null_count = 0;
+
+            $("#searchBtn").on("click",function(e){
+                e.preventDefault();
+                null_check();
+                if (null_count == 6){
+                    alert("주문을 입력해 주세요");
+                }else{
+                    null_count = 0;
+                    var token = $("meta[name='_csrf']").attr("content");
+                    var header = $("meta[name='_csrf_header']").attr("content");
+
+                    warehouseStockDto.gubun = "IN";
+
+                    console.log(warehouseStockDto);
+
+                    //url 앞에 admins가 자동으로 붙어 controller 주소를 붙였음
+                    $.ajax({
+                        url: "insertorder",
+                        type: "POST",
+                        contentType: "application/json",
+                        data: JSON.stringify(warehouseStockDto),
+                        beforeSend : function(xhr){
+                            /* 데이터를 전송하기 전에 헤더에 csrf값을 설정 */
+                            xhr.setRequestHeader(header, token);
+                        },
+                        cache   : false,
+                        success: function(result,status){
+                             alert(result);
+                             location.href='/index';
+                        },
+                        error: function(jqXHR, status, error){
+                            alert("주문이 실패하였습니다."+ jqXHR.responseText);
+                        }
+                    });
+                }
+
+            });
+
+           function null_check(){
+
+                var warehouse_id = $('input[name=shop]:checked').val();
+
+                var warehouse_id = $('input[name=shop]:checked').val();
+                if(warehouse_id == "" || warehouse_id == null){
+                    warehouseStockDto.warehouse_id = null;
+                }else{
+                    warehouseStockDto.warehouse_id = warehouse_id;
+                }
+
+                var coffee = $("#coffee").val();
+                var coff_quan = $("#coff_quan").val();
+                if(coffee == "" || coffee == null){
+                    null_count += 1;
+                }else{
+                    warehouseStockDto.item_id = coffee.substring(coffee.lastIndexOf('_')+1 , coffee.length);
+                    warehouseStockDto.receiving = parseInt(coff_quan);
+                }
+
+                var latte = $("#latte").val();
+                var latte_quan = $("#latte_quan").val();
+                if(latte == "" || latte == null){
+                    null_count += 1;
+                }else{
+                    warehouseStockDto.item_id = latte.substring(latte.lastIndexOf('_')+1 , latte.length);
+                    warehouseStockDto.receiving = parseInt(latte_quan);
+                }
+
+                var bubble = $("#bubble").val();
+                var bubble_quan = $("#bubble_quan").val();
+                if(bubble == "" || bubble == null){
+                    null_count += 1;
+                }else{
+                    warehouseStockDto.item_id = bubble.substring(bubble.lastIndexOf('_')+1 , bubble.length);
+                    warehouseStockDto.receiving = parseInt(bubble_quan);
+                }
+
+                var smooth = $("#smooth").val();
+                var smooth_quan = $("#smooth_quan").val();
+                if(smooth == "" || smooth == null){
+                    null_count += 1;
+                }else{
+                    warehouseStockDto.item_id = smooth.substring(smooth.lastIndexOf('_')+1 , smooth.length);
+                    warehouseStockDto.receiving = parseInt(smooth_quan);
+                }
+
+                var whipping = $("#whipping").val();
+                var whipping_quan = $("#whipping_quan").val();
+                 if(whipping == "" || whipping == null){
+                    null_count += 1;
+                }else{
+                    warehouseStockDto.item_id = whipping.substring(whipping.lastIndexOf('_')+1 , whipping.length);
+                    warehouseStockDto.receiving = parseInt(whipping_quan);
+                }
+
+                var syrup = $("#syrup").val();
+                var syrup_quan = $("#syrup_quan").val();
+                 if(syrup == "" || syrup == null){
+                    null_count += 1;
+                }else{
+                    warehouseStockDto.item_id = syrup.substring(syrup.lastIndexOf('_')+1 , syrup.length);
+                    warehouseStockDto.receiving = parseInt(syrup_quan);
+                }
+           }
+
+        });
+    </script>
+</body>
+</html>
