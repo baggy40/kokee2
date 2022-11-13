@@ -54,7 +54,7 @@ public class AdminController {
            return "admin/adminForm";
        }
 
-       return "login/login";
+       return "redirect:/admins/login";
    }
 
    @GetMapping(value = "/login")
@@ -62,10 +62,6 @@ public class AdminController {
         return "login/login";
    }
 
-    @PostMapping(value = "/login")
-    public String adminPostLogin(){
-        return "redirect:/index";
-    }
 
     @GetMapping(value = "/receive")
     public String wareReceive(){
